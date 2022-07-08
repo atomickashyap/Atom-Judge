@@ -3,33 +3,33 @@
 <link rel="stylesheet" type="text/css" href="{% static 'ojmain/css/problem_style.css' %}">
 <body>
 
-    <form id = "logout_form" action="/ojmain/logout">
-        <div class = "logout">
-            <input type="submit" class = "logbutton" value="Logout">
-        </div>
-    </form>
+        <form id = "logout_form" action="/ojmain/logout">
+            <div class = "logout">
+                <input type="submit" class = "bt" value="Logout as">
+            </div>
+        </form>
 
-<div class = "prob" >
-    {% if context %}
-        <ul style= "list-style-type:none;">
-            <li class = "head">Problem</li>
-            {% for key, val in context.items %}
-                <li><a href="">{{val.0}}</a></li>
-            {% endfor %}
-        </ul>
-        <ul style= "list-style-type:none;">
-            <li class = "head">Difficulty</li>
-            {% for key, val in context.items %}
-                <li>{{val.1}}</li>
-            {% endfor %}
-        </ul>
-        <ul style= "list-style-type:none;">
-            <li class = "head">Solve Status</li>
-            {% for key, val in context.items %}
-                <li>{{val.2}}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+    <div class = "prob" >
+        {% if context %}
+            <ul style= "list-style-type:none;">
+                <li class = "head">Problem</li>
+                {% for key, val in context.items %}
+                    <li><a href="/ojmain/problems/{{ key }}/" class= "underline">{{val.0}}</a></li>
+                {% endfor %}
+            </ul>
+            <ul style= "list-style-type:none;">
+                <li class = "head">Difficulty</li>
+                {% for key, val in context.items %}
+                    <li>{{val.1}}</li>
+                {% endfor %}
+            </ul>
+            <ul style= "list-style-type:none;">
+                <li class = "head">Solve Status</li>
+                {% for key, val in context.items %}
+                    <li>{{val.2}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 </div>
 
 

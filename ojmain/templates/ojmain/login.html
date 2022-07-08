@@ -1,18 +1,61 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'ojmain/css/style.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'ojmain/css/login.css' %}">
+<div class="container">
+    <form name= 'form1' class = "box" action = "/ojmain/" method="POST">
+        {% csrf_token %}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <input type="text" name="username" placeholder="Enter Username" autocomplete="off" required>
+        <input type="password" name="password" placeholder="Password" autocomplete="off" required>
+        <input type="submit" value="Login" class="submit">
+        <!--avatar-->
+            <div class="avatar">
 
-<form action = "/ojmain/" method="POST">
-    {% csrf_token %}
-    <div class="container">   
-        <label>Username </label>   
-        <input type="text" placeholder="Enter Username" name="username" required>  
-        <label>Password </label>   
-        <input type="password" placeholder="Enter Password" name="password" required>  
-        <input type="submit" class="button" value ="Login">
+                <div class="hair1"></div>
+                <div class="hair2"></div>
+                <div class="hair3"></div>
+                <div class="clothes">
+                    <div class="buttons1"></div>
+                    <div class="buttons2"></div>
+                </div>
+                <div class="head"></div>
+                <div class="neck"></div>
+                <div class="eyebrow-left"></div>
+                <div class="eyebrow-right"></div>
+                <div class="eye-left"></div>
+                <div class="eye-right"></div>
+                <div class="nose"></div>
+                <div class="smile1"></div>
+                <div class="smile2"></div>
+                <div class="smile3"></div>
+                <div class="blush1"></div>
+                <div class="blush2"></div>
+                
+            </div>
+    </form>
+    <div class = "mess">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </div>
-</form>
-
-<div class ="bmg">
-
-</div>
+    <a href="/ojmain/register" class="signUp">Not a Member? Sign up</a>
+</div> 
